@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contribution for Dhol for Scribble Day at School</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="container">
+    <h1>Contribution for Dhol for Scribble Day at School</h1>
+    <form id="contributionForm">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+        <label for="amount">Amount:</label><br>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount (minimum 10)" min="10" required><br>
+        <button id="payButton">Pay Now</button>
+    </form>
+    <div id="receipt" style="display:none;">
+        <h2>Receipt</h2>
+        <p id="nameReceipt"></p>
+        <p id="amountReceipt"></p>
+        <p id="timeReceipt"></p>
+        <p id="paymentSecurity"></p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contributionForm');
+    const receipt = document.getElementById('receipt');
+    const nameInput = document.getElementById('name');
+    const amountInput = document.getElementById('amount');
+    const nameReceipt = document.getElementById('nameReceipt');
+    const amountReceipt = document.getElementById('amountReceipt');
+    const timeReceipt = document.getElementById('timeReceipt');
+    const paymentSecurity = document.getElementById('paymentSecurity');
+    const payButton = document.getElementById('payButton');
+
+    payButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const name = nameInput.value;
+        const amount = amountInput.value;
+
+        // Redirect to UPI payment link
+        redirectToUPI(name, amount);
+    });
+
+    function redirectToUPI(name, amount) {
+        const upiId = '9555763891@fam'; // Replace with your UPI ID
+        const upiLink = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
+        window.location.href = upiLink;
+    }
+});
+</script>
+</body>
+</html>
