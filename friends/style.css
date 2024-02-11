@@ -144,6 +144,12 @@ h1 {
     display: block;
     color: #1798a1;
 }
+h2{
+  font-family: 'Protest Strike', sans-serif;
+    font-size: 3vmax;
+    display: block;
+    color: #f856cc;
+}
 p {
     font-family: 'Protest Riot', sans-serif;
     font-size: 3vmax;
@@ -243,6 +249,7 @@ p {
     align-items: center;
     background-color: #dbd3bdb2;
     padding:2%;
+    margin: 4%;
     align-content: center;
     align-self: auto;
     text-align: center;
@@ -302,8 +309,9 @@ p {
 
 .slider-wrapper .image-list .image-item {
     width: auto;
-    height: 400px;
+    height: 250px;
     object-fit: cover;
+    justify-content: center;
 }
 
 .memories .slider-scrollbar {
@@ -356,6 +364,9 @@ p {
 
 /* Styles for mobile and tablets */
 @media only screen and (max-width: 1023px) {
+.memories{
+  margin: 2%;
+}
 .slider-wrapper .slide-button {
     display: none !important;
 }
@@ -368,7 +379,7 @@ p {
 
 .slider-wrapper .image-list .image-item {
     width: auto;
-    height: 380px;
+    height: 225px;
 }
 
 .slider-scrollbar .scrollbar-thumb {
@@ -392,6 +403,9 @@ body{
 
 /* Media Query for mobile devices */
 @media (max-width: 768px) {
+  .memories{
+    margin: 1%;
+  }
     .wrap {
         display: block;
         margin-right: 0;
